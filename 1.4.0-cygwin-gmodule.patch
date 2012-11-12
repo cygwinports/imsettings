@@ -1,0 +1,32 @@
+--- origsrc/imsettings-1.4.0/imsettings-daemon/imsettings-module.c	2011-10-13 22:23:26.000000000 -0500
++++ src/imsettings-1.4.0/imsettings-daemon/imsettings-module.c	2012-11-12 00:36:38.773382000 -0600
+@@ -161,7 +161,11 @@ imsettings_module_new(const gchar *name)
+ 	g_return_val_if_fail (name != NULL && name[0] != 0, NULL);
+ 
+ 	n = g_path_get_basename(name);
++#ifdef __CYGWIN__
++	if (strncmp(n, "cygimsettings-", 14) == 0) {
++#else
+ 	if (strncmp(n, "libimsettings-", 14) == 0) {
++#endif
+ 		gsize len = strlen(&n[14]);
+ 		gsize mlen = strlen(G_MODULE_SUFFIX) + 1;
+ 
+@@ -228,7 +232,7 @@ imsettings_module_load(IMSettingsModule
+ 	g_return_val_if_fail (IMSETTINGS_IS_MODULE (module), FALSE);
+ 
+ 	priv = module->priv;
+-	modulename = g_strdup_printf("libimsettings-%s.so", priv->name);
++	modulename = g_strdup_printf("imsettings-%s", priv->name);
+ 	p = g_getenv("IMSETTINGS_MODULE_PATH");
+ 	if (!p) {
+ 		path_list = g_strsplit(IMSETTINGS_MODULE_PATH,
+@@ -248,7 +252,7 @@ imsettings_module_load(IMSettingsModule
+ 			len--;
+ 		path = g_strndup(s, len);
+ 		if (path[0] != 0) {
+-			fullpath = g_build_filename(path, modulename, NULL);
++			fullpath = g_module_build_path(path, modulename);
+ 
+ 			priv->module = g_module_open(fullpath,
+ 						     G_MODULE_BIND_LAZY|G_MODULE_BIND_LOCAL);

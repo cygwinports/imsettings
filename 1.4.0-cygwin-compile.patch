@@ -1,0 +1,12 @@
+--- origsrc/imsettings-1.4.0/imsettings-daemon/imsettings-proc.c	2012-04-25 21:15:38.000000000 -0500
++++ src/imsettings-1.4.0/imsettings-daemon/imsettings-proc.c	2012-11-11 23:13:01.224770100 -0600
+@@ -33,6 +33,9 @@
+ #include "imsettings-marshal.h"
+ #include "imsettings-proc.h"
+ 
++#undef stdout
++#undef stderr
++
+ #define IMSETTINGS_PROC_GET_PRIVATE(_o_)	(G_TYPE_INSTANCE_GET_PRIVATE ((_o_), IMSETTINGS_TYPE_PROC, IMSettingsProcPrivate))
+ 
+ #define RESTART_COUNTER_THRESHOLD 5
