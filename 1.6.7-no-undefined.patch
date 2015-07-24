@@ -1,0 +1,100 @@
+--- origsrc/imsettings-1.6.7/backends/cinnamon-gsettings/Makefile.am	2013-10-09 22:22:13.000000000 -0500
++++ src/imsettings-1.6.7/backends/cinnamon-gsettings/Makefile.am	2014-11-27 00:10:52.094065800 -0600
+@@ -38,6 +38,7 @@ libimsettings_cinnamon_gsettings_la_CFLA
+ libimsettings_cinnamon_gsettings_la_LDFLAGS =		\
+ 	-avoid-version					\
+ 	-module						\
++	-no-undefined					\
+ 	$(LDFLAGS)					\
+ 	$(NULL)
+ libimsettings_cinnamon_gsettings_la_LIBADD =		\
+--- origsrc/imsettings-1.6.7/backends/gconf/Makefile.am	2013-05-26 22:39:15.000000000 -0500
++++ src/imsettings-1.6.7/backends/gconf/Makefile.am	2014-11-27 00:10:52.098566300 -0600
+@@ -38,6 +38,7 @@ libimsettings_gconf_la_CFLAGS =				\
+ libimsettings_gconf_la_LDFLAGS =			\
+ 	-avoid-version					\
+ 	-module						\
++	-no-undefined					\
+ 	$(LDFLAGS)					\
+ 	$(NULL)
+ libimsettings_gconf_la_LIBADD =				\
+--- origsrc/imsettings-1.6.7/backends/gsettings/Makefile.am	2013-05-26 22:39:15.000000000 -0500
++++ src/imsettings-1.6.7/backends/gsettings/Makefile.am	2014-11-27 00:10:52.102066800 -0600
+@@ -38,6 +38,7 @@ libimsettings_gsettings_la_CFLAGS =				\
+ libimsettings_gsettings_la_LDFLAGS =			\
+ 	-avoid-version					\
+ 	-module						\
++	-no-undefined					\
+ 	$(LDFLAGS)					\
+ 	$(NULL)
+ libimsettings_gsettings_la_LIBADD =			\
+--- origsrc/imsettings-1.6.7/backends/lxde/Makefile.am	2013-05-26 22:39:15.000000000 -0500
++++ src/imsettings-1.6.7/backends/lxde/Makefile.am	2014-11-27 00:10:52.106567300 -0600
+@@ -38,6 +38,7 @@ libimsettings_lxde_la_CFLAGS =				\
+ libimsettings_lxde_la_LDFLAGS =				\
+ 	-avoid-version					\
+ 	-module						\
++	-no-undefined					\
+ 	$(LDFLAGS)					\
+ 	$(NULL)
+ libimsettings_lxde_la_LIBADD =				\
+--- origsrc/imsettings-1.6.7/backends/mate-gsettings/Makefile.am	2013-05-26 22:39:15.000000000 -0500
++++ src/imsettings-1.6.7/backends/mate-gsettings/Makefile.am	2014-11-27 00:10:52.110567900 -0600
+@@ -38,6 +38,7 @@ libimsettings_mate_gsettings_la_CFLAGS =
+ libimsettings_mate_gsettings_la_LDFLAGS =		\
+ 	-avoid-version					\
+ 	-module						\
++	-no-undefined					\
+ 	$(LDFLAGS)					\
+ 	$(NULL)
+ libimsettings_mate_gsettings_la_LIBADD =		\
+--- origsrc/imsettings-1.6.7/backends/mateconf/Makefile.am	2013-05-26 22:39:15.000000000 -0500
++++ src/imsettings-1.6.7/backends/mateconf/Makefile.am	2014-11-27 00:10:52.114568400 -0600
+@@ -38,6 +38,7 @@ libimsettings_mateconf_la_CFLAGS =				\
+ libimsettings_mateconf_la_LDFLAGS =			\
+ 	-avoid-version					\
+ 	-module						\
++	-no-undefined					\
+ 	$(LDFLAGS)					\
+ 	$(NULL)
+ libimsettings_mateconf_la_LIBADD =			\
+--- origsrc/imsettings-1.6.7/backends/qt/Makefile.am	2013-05-26 22:39:15.000000000 -0500
++++ src/imsettings-1.6.7/backends/qt/Makefile.am	2014-11-27 00:10:52.117568700 -0600
+@@ -39,6 +39,7 @@ libimsettings_qt_la_CFLAGS =				\
+ libimsettings_qt_la_LDFLAGS =				\
+ 	-avoid-version					\
+ 	-module						\
++	-no-undefined					\
+ 	$(LDFLAGS)					\
+ 	$(NULL)
+ libimsettings_qt_la_LIBADD =				\
+--- origsrc/imsettings-1.6.7/backends/xfce/Makefile.am	2013-05-26 22:39:15.000000000 -0500
++++ src/imsettings-1.6.7/backends/xfce/Makefile.am	2014-11-27 00:10:52.119569000 -0600
+@@ -38,6 +38,7 @@ libimsettings_xfce_la_CFLAGS =				\
+ libimsettings_xfce_la_LDFLAGS =				\
+ 	-avoid-version					\
+ 	-module						\
++	-no-undefined					\
+ 	$(LDFLAGS)					\
+ 	$(NULL)
+ libimsettings_xfce_la_LIBADD =				\
+--- origsrc/imsettings-1.6.7/backends/xim/Makefile.am	2013-05-26 22:39:15.000000000 -0500
++++ src/imsettings-1.6.7/backends/xim/Makefile.am	2014-11-27 00:10:52.122569400 -0600
+@@ -54,6 +54,7 @@ libimsettings_xim_la_CFLAGS =				\
+ libimsettings_xim_la_LDFLAGS =				\
+ 	-avoid-version					\
+ 	-module						\
++	-no-undefined					\
+ 	$(LDFLAGS)					\
+ 	$(NULL)
+ libimsettings_xim_la_LIBADD =				\
+--- origsrc/imsettings-1.6.7/imsettings/Makefile.am	2013-05-26 22:39:15.000000000 -0500
++++ src/imsettings-1.6.7/imsettings/Makefile.am	2014-11-27 00:10:52.125069700 -0600
+@@ -104,6 +104,7 @@ libimsettings_la_CFLAGS =					\
+ libimsettings_la_LDFLAGS =					\
+ 	$(LDFLAGS)						\
+ 	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)	\
++	-no-undefined						\
+ 	$(NULL)
+ 
+ if HAVE_INTROSPECTION
