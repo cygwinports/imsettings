@@ -1,6 +1,6 @@
 NAME="imsettings"
 VERSION=1.6.8
-RELEASE=1
+RELEASE=2
 CATEGORY="X11"
 SUMMARY="On-the-fly X Input Method settings manager"
 DESCRIPTION="IMSettings is a framework that delivers Input Method settings and

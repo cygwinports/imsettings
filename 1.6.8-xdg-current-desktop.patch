@@ -28,3 +28,14 @@
  	*)
  	    if check_imsettings_capability qt; then
  		return 0
+--- origsrc/imsettings-1.6.8/data/imsettings-target-checker.sh.in	2015-11-20 11:53:10.088411500 -0600
++++ src/imsettings-1.6.8/data/imsettings-target-checker.sh.in	2015-11-20 11:54:07.982263100 -0600
+@@ -75,7 +75,7 @@ gsettings_get_bool() {
+     fi
+ }
+ 
+-case $(get_desktop) in
++case $(get_desktop|tr '[:upper:]' '[:lower:]') in
+     *gnome|gnome*)
+ 	dbus_send 'org.gnome.Shell' '/' 'org.freedesktop.DBus.Peer.Ping'
+ 	if [ $? = 0 ]; then
