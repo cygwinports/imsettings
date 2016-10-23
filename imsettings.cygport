@@ -1,6 +1,6 @@
 NAME="imsettings"
-VERSION=1.6.8
-RELEASE=2
+VERSION=1.7.2
+RELEASE=1
 CATEGORY="X11"
 SUMMARY="On-the-fly X Input Method settings manager"
 DESCRIPTION="IMSettings is a framework that delivers Input Method settings and
@@ -13,16 +13,14 @@ PATCH_URI="
 	fedora/imsettings-disable-xim.patch
 	fedora/imsettings-xinput-xcompose.patch
 	fedora/imsettings-force-enable-for-cinnamon.patch
-	fedora/imsettings-fix-configure.patch
 	1.6.7-no-undefined.patch
 	1.4.0-cygwin-compile.patch
 	1.4.0-cygwin-gmodule.patch
-	1.6.8-aclocal.patch
 	1.6.8-xdg-current-desktop.patch
 "
 
 PKG_NAMES="imsettings imsettings-lxde imsettings-xfce
-	   libimsettings5 libimsettings-devel girepository-IMSettings1.3"
+	   libimsettings5 libimsettings-devel girepository-IMSettings1.7"
 imsettings_REQUIRES="dconf ibus im-chooser"
 imsettings_CONTENTS="
 	--exclude=gir-1.0
@@ -38,7 +36,8 @@ imsettings_xfce_REQUIRES="imsettings xfce4-im-chooser"
 imsettings_xfce_CONTENTS="usr/lib/imsettings/cygimsettings-xfce.dll"
 libimsettings5_CONTENTS="usr/bin/cygimsettings-5.dll"
 libimsettings_devel_CONTENTS="usr/include/ usr/lib/lib* usr/lib/pkgconfig/"
-girepository_IMSettings1_3_CONTENTS="usr/*/gir*/IMSettings-1.3.*"
+girepository_IMSettings1_7_OBSOLETES="girepository-IMSettings1.3"
+girepository_IMSettings1_7_CONTENTS="usr/*/gir*/IMSettings-1.7.*"
 
 DISTCLEANFILES="*.pc"
 

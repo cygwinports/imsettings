@@ -1,16 +1,6 @@
 --- origsrc/imsettings-1.6.8/data/imsettings-functions.in	2015-07-23 02:23:02.225937100 -0500
 +++ src/imsettings-1.6.8/data/imsettings-functions.in	2015-07-23 04:56:20.476466600 -0500
-@@ -88,6 +88,9 @@ function get_desktop() {
-     if [ -n "$GDMSESSION" ]; then
- 	GUESS_DESKTOP="\$GDMSESSION"
- 	echo "$GDMSESSION"
-+    elif [ -n "$XDG_CURRENT_DESKTOP" ]; then
-+        GUESS_DESKTOP="\$XDG_CURRENT_DESKTOP"
-+        echo "$XDG_CURRENT_DESKTOP"
-     elif [ -n "$DESKTOP_SESSION" ]; then
- 	GUESS_DESKTOP="\$DESKTOP_SESSION"
- 	if [ "$DESKTOP_SESSION" == "default" ]; then
-@@ -113,7 +116,7 @@ function get_desktop() {
+@@ -119,7 +119,7 @@ function get_desktop() {
  
  function is_gtk_supported() {
      [ -n "$IMSETTINGS_DISABLE_DESKTOP_CHECK" ] && return 0
@@ -19,7 +9,7 @@
  	cinnamon*)
  	    if check_imsettings_capability cinnamon-gsettings; then
  		return 0
-@@ -148,7 +151,7 @@ function is_gtk_supported() {
+@@ -154,7 +154,7 @@ function is_gtk_supported() {
  
  function is_qt_supported() {
      [ -n "$IMSETTINGS_DISABLE_DESKTOP_CHECK" ] && return 0
@@ -34,7 +24,7 @@
      fi
  }
  
--case $(get_desktop) in
+-case $(get_desktop|tr '[A-Z]' '[a-z]') in
 +case $(get_desktop|tr '[:upper:]' '[:lower:]') in
      *gnome|gnome*)
  	dbus_send 'org.gnome.Shell' '/' 'org.freedesktop.DBus.Peer.Ping'
